@@ -62,7 +62,8 @@
     padaria: 'M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8H4z M4 12h16 M8 12v3 M12 12v3 M16 12v3',
     cookie: 'M12 3a9 9 0 1 0 9 9c-1.7 0-3-1.3-3-3-1.7 0-3-1.3-3-3-2 0-3-1-3-3z M9 13.2h.01 M13 15.5h.01 M14.5 10.5h.01',
     cupcake: 'M6 11h12l-1.3 8.2a2 2 0 0 1-2 1.8H9.3a2 2 0 0 1-2-1.8L6 11z M8 11c0-2.5 1.8-3.8 1-5.5 1.6 0 3 1 3 2.7 0-1.7 1.4-2.7 3-2.7-.8 1.7 1 3 1 5.5',
-    chocolate: 'M4 6h16v12H4z M4 6l4 4M8 6l4 4M12 6l4 4M16 6l4 4 M4 14h16'
+    chocolate: 'M4 6h16v12H4z M4 6l4 4M8 6l4 4M12 6l4 4M16 6l4 4 M4 14h16',
+    trufa: 'M12 21c4-2.5 6-6 6-9.5A6 6 0 0 0 12 5a6 6 0 0 0-6 6.5C6 15 8 18.5 12 21z M9.2 12.5h.01 M14.8 12.5h.01 M12 15.2h.01'
   };
 
   const CARDS = [
@@ -71,6 +72,7 @@
     { id: 'chunky',  name: 'Chunky Chunks',  icon: 'cookie',    blurb: 'cookie quentinho, mão na mão' },
     { id: 'damarate', name: 'Damarate',      icon: 'cupcake',   blurb: 'doce raro pra ocasião especial' },
     { id: 'kopen',   name: 'Kopenhagen',     icon: 'chocolate', blurb: 'chocolate fino, à moda antiga' },
+    { id: 'cacau',   name: 'Cacau Show',     icon: 'trufa',      blurb: 'trufa na mão, sem pressa nenhuma' },
   ];
 
   const grid = document.getElementById('card-grid');
