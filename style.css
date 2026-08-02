@@ -233,6 +233,56 @@ button{
 .letter-signoff .serif-italic{ font-size: 22px; color: var(--blue-deep); }
 
 /* =========================================================
+   GALLERY
+   ========================================================= */
+.gallery-section{
+  padding: var(--space-5) var(--space-3);
+  background: var(--ivory);
+  text-align: center;
+}
+
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  max-width: 480px;
+  margin: var(--space-3) auto 0;
+}
+
+.gallery-item{
+  margin: 0;
+}
+
+/* toda 3ª foto (1ª, 4ª, 7ª...) ocupa a largura toda — prefira fotos horizontais aqui */
+.gallery-item:nth-child(3n+1){
+  grid-column: span 2;
+}
+.gallery-item:nth-child(3n+1) img{
+  aspect-ratio: 16/10;
+}
+
+.gallery-item img{
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid var(--blue-pale);
+  background: var(--blue-pale);
+  color: var(--blue);
+  font-family: var(--font-sans);
+  font-size: 11px;
+}
+
+.gallery-item figcaption{
+  margin-top: 6px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--blue);
+}
+
+/* =========================================================
    CARD GAME
    ========================================================= */
 .game-section{
