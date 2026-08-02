@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#F7F4EE">
+<title>Para Julia, com carinho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- linha decorativa reutilizável (motivo de "fita/glacê") -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="ribbon" viewBox="0 0 300 24">
+      <path d="M0 12 C 30 2, 45 22, 75 12 S 120 2, 150 12 S 195 22, 225 12 S 270 2, 300 12"
+            fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===================== HERO / CONTAGEM REGRESSIVA ===================== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">um presente para</p>
+    <h1 class="hero-name">Julia</h1>
+    <svg class="ribbon-div" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd-unit">
+        <span class="cd-number" id="cd-days">--</span>
+        <span class="cd-label">dias</span>
+      </div>
+      <div class="cd-unit">
+        <span class="cd-number" id="cd-hours">--</span>
+        <span class="cd-label">horas</span>
+      </div>
+      <div class="cd-unit">
+        <span class="cd-number" id="cd-minutes">--</span>
+        <span class="cd-label">min</span>
+      </div>
+      <div class="cd-unit">
+        <span class="cd-number" id="cd-seconds">--</span>
+        <span class="cd-label">seg</span>
+      </div>
+    </div>
+
+    <p class="hero-sub" id="hero-sub">até o dia 7 de agosto</p>
+
+    <div class="hero-birthday" id="hero-birthday" hidden>
+      <h2>Feliz aniversário, meu amor.</h2>
+    </div>
+
+    <button class="scroll-cue" id="scroll-cue" aria-label="Rolar para continuar">
+      <span></span>
+    </button>
+  </div>
+</section>
+
+<!-- ===================== CARTA ===================== -->
+<section class="letter-section" id="letter">
+  <svg class="ribbon-div" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
+  <p class="eyebrow center">uma carta</p>
+  <h2 class="section-title serif">para quem você é</h2>
+
+  <article class="letter-paper">
+    <p class="letter-salutation">Julia,</p>
+
+    <!--
+      ISAQUE: escreva aqui a sua carta. Pode apagar este parágrafo de
+      exemplo e os comentários — é só um espaço reservado para o texto
+      final. Recomendo 3–6 parágrafos curtos. Cada parágrafo dentro de
+      <p class="letter-p">...</p> vira um bloco elegante na carta.
+    -->
+    <p class="letter-p placeholder-text">
+      (espaço reservado — escreva aqui a história de vocês, quem ela é
+      para você e as qualidades que você mais admira nela.)
+    </p>
+
+    <p class="letter-signoff">com todo o meu amor,<br><span class="serif-italic">Isaque</span></p>
+  </article>
+</section>
+
+<!-- ===================== JOGO DE CARTAS ===================== -->
+<section class="game-section" id="game">
+  <svg class="ribbon-div light" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
+  <p class="eyebrow center light">um convite</p>
+  <h2 class="section-title serif light">escolha nossa próxima doçura</h2>
+  <p class="game-instructions">vire as cartas, veja as opções, e escolha para onde vamos</p>
+
+  <div class="card-grid" id="card-grid"></div>
+
+  <div class="game-confirm" id="game-confirm" hidden>
+    <svg class="ribbon-div light small" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
+    <p id="game-confirm-text"></p>
+  </div>
+</section>
+
+<!-- ===================== FINAL — SNOOPY E BALÕES ===================== -->
+<section class="finale-section" id="finale">
+  <p class="eyebrow center">para fechar com carinho</p>
+  <h2 class="section-title serif">toque para soltar os balões</h2>
+
+  <div class="finale-stage" id="finale-stage">
+    <svg class="balloons" id="balloons" viewBox="0 0 320 260" aria-hidden="true">
+      <!-- linhas dos balões -->
+      <line class="balloon-string" data-balloon="1" x1="90" y1="150" x2="70" y2="70" />
+      <line class="balloon-string" data-balloon="2" x1="130" y1="150" x2="125" y2="55" />
+      <line class="balloon-string" data-balloon="3" x1="175" y1="150" x2="185" y2="55" />
+      <line class="balloon-string" data-balloon="4" x1="215" y1="150" x2="235" y2="70" />
+
+      <!-- balões -->
+      <g class="balloon" data-balloon="1" tabindex="0" role="button" aria-label="Soltar balão">
+        <ellipse cx="70" cy="55" rx="20" ry="26"/>
+      </g>
+      <g class="balloon" data-balloon="2" tabindex="0" role="button" aria-label="Soltar balão">
+        <ellipse cx="125" cy="40" rx="20" ry="26"/>
+      </g>
+      <g class="balloon" data-balloon="3" tabindex="0" role="button" aria-label="Soltar balão">
+        <ellipse cx="185" cy="40" rx="20" ry="26"/>
+      </g>
+      <g class="balloon" data-balloon="4" tabindex="0" role="button" aria-label="Soltar balão">
+        <ellipse cx="235" cy="55" rx="20" ry="26"/>
+      </g>
+
+      <!-- cachorrinho, arte de linha minimalista (inspirada, não reprodução de personagem registrado) -->
+      <g id="pup" class="pup" tabindex="0" role="button" aria-label="Tocar no cachorrinho">
+        <ellipse cx="160" cy="190" rx="46" ry="34" class="pup-body"/>
+        <circle cx="160" cy="150" r="26" class="pup-head"/>
+        <path d="M138 132 C 122 128, 116 148, 128 160" class="pup-ear"/>
+        <path d="M182 132 C 198 128, 204 148, 192 160" class="pup-ear"/>
+        <circle cx="151" cy="148" r="2.4" class="pup-eye"/>
+        <circle cx="169" cy="148" r="2.4" class="pup-eye"/>
+        <path d="M154 158 Q160 163 166 158" class="pup-mouth"/>
+      </g>
+    </svg>
+
+    <p class="finale-hint" id="finale-hint">toque nos balões, ou no cachorrinho para soltar todos</p>
+
+    <div class="finale-message" id="finale-message" hidden>
+      <svg class="ribbon-div" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
+      <h3>feliz aniversário, Julia</h3>
+      <p>eu escolho você, hoje e sempre.</p>
+      <p class="finale-from">— Isaque</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <svg class="ribbon-div small" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
+  <p>feito com carinho por Isaque</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
