@@ -2,10 +2,17 @@
   'use strict';
 
   /* =========================================================
-     CONTAGEM REGRESSIVA
-     Ajuste a data abaixo se precisar.
+     CONTAGEM REGRESSIVA — "ANO PASSANDO RÁPIDO"
+     Como ela só vai abrir o site no dia do aniversário (07/08),
+     uma contagem regressiva real sempre mostraria zero. Em vez
+     disso, ao abrir a página, os números "correm" rapidamente
+     de um ano inteiro até chegar a zero, dando a sensação de
+     ver o ano passando — e terminam exatamente na revelação do
+     aniversário. Ajuste ANIM_DAYS ou ANIM_DURATION_MS se quiser
+     mudar a duração ou de quantos dias ele parte.
      ========================================================= */
-  const TARGET_DATE = new Date('2026-08-07T00:00:00-03:00');
+  const ANIM_DAYS = 365;
+  const ANIM_DURATION_MS = 4200;
 
   const cdDays    = document.getElementById('cd-days');
   const cdHours   = document.getElementById('cd-hours');
@@ -17,32 +24,51 @@
 
   function pad(n){ return String(n).padStart(2, '0'); }
 
-  function tickCountdown(){
-    const now = new Date();
-    const diff = TARGET_DATE.getTime() - now.getTime();
+  // acelera no início e desacelera suavemente perto do fim
+  function easeOutQuart(t){ return 1 - Math.pow(1 - t, 4); }
 
-    if (diff <= 0){
-      countdownEl.hidden = true;
-      heroSub.hidden = true;
-      heroBirthday.hidden = false;
-      clearInterval(countdownTimer);
+  function animateCountdown(){
+    const totalStartSeconds = ANIM_DAYS * 86400;
+    const startTime = performance.now();
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced){
+      finishCountdown();
       return;
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+    function frame(now){
+      const elapsed = now - startTime;
+      const t = Math.min(elapsed / ANIM_DURATION_MS, 1);
+      const remaining = Math.round(totalStartSeconds * (1 - easeOutQuart(t)));
 
-    cdDays.textContent = pad(days);
-    cdHours.textContent = pad(hours);
-    cdMinutes.textContent = pad(minutes);
-    cdSeconds.textContent = pad(seconds);
+      const days = Math.floor(remaining / 86400);
+      const hours = Math.floor((remaining % 86400) / 3600);
+      const minutes = Math.floor((remaining % 3600) / 60);
+      const seconds = remaining % 60;
+
+      cdDays.textContent = pad(days);
+      cdHours.textContent = pad(hours);
+      cdMinutes.textContent = pad(minutes);
+      cdSeconds.textContent = pad(seconds);
+
+      if (t < 1){
+        requestAnimationFrame(frame);
+      } else {
+        finishCountdown();
+      }
+    }
+
+    requestAnimationFrame(frame);
   }
 
-  tickCountdown();
-  const countdownTimer = setInterval(tickCountdown, 1000);
+  function finishCountdown(){
+    countdownEl.hidden = true;
+    heroSub.hidden = true;
+    heroBirthday.hidden = false;
+  }
+
+  animateCountdown();
 
   /* =========================================================
      SCROLL CUE
