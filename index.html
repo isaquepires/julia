@@ -148,12 +148,12 @@
   <h2 class="section-title serif">toque para soltar os balões</h2>
 
   <div class="finale-stage" id="finale-stage">
-    <svg class="balloons" id="balloons" viewBox="0 0 320 260" aria-hidden="true">
+    <svg class="balloons" id="balloons" viewBox="0 0 320 170" aria-hidden="true">
       <!-- linhas dos balões -->
-      <line class="balloon-string" data-balloon="1" x1="90" y1="150" x2="70" y2="70" />
-      <line class="balloon-string" data-balloon="2" x1="130" y1="150" x2="125" y2="55" />
-      <line class="balloon-string" data-balloon="3" x1="175" y1="150" x2="185" y2="55" />
-      <line class="balloon-string" data-balloon="4" x1="215" y1="150" x2="235" y2="70" />
+      <line class="balloon-string" data-balloon="1" x1="150" y1="150" x2="70" y2="70" />
+      <line class="balloon-string" data-balloon="2" x1="150" y1="150" x2="125" y2="55" />
+      <line class="balloon-string" data-balloon="3" x1="160" y1="150" x2="185" y2="55" />
+      <line class="balloon-string" data-balloon="4" x1="160" y1="150" x2="235" y2="70" />
 
       <!-- balões -->
       <g class="balloon" data-balloon="1" tabindex="0" role="button" aria-label="Soltar balão">
@@ -168,20 +168,13 @@
       <g class="balloon" data-balloon="4" tabindex="0" role="button" aria-label="Soltar balão">
         <ellipse cx="235" cy="55" rx="20" ry="26"/>
       </g>
-
-      <!-- cachorrinho, arte de linha minimalista (inspirada, não reprodução de personagem registrado) -->
-      <g id="pup" class="pup" tabindex="0" role="button" aria-label="Tocar no cachorrinho">
-        <ellipse cx="160" cy="190" rx="46" ry="34" class="pup-body"/>
-        <circle cx="160" cy="150" r="26" class="pup-head"/>
-        <path d="M138 132 C 122 128, 116 148, 128 160" class="pup-ear"/>
-        <path d="M182 132 C 198 128, 204 148, 192 160" class="pup-ear"/>
-        <circle cx="151" cy="148" r="2.4" class="pup-eye"/>
-        <circle cx="169" cy="148" r="2.4" class="pup-eye"/>
-        <path d="M154 158 Q160 163 166 158" class="pup-mouth"/>
-      </g>
     </svg>
 
-    <p class="finale-hint" id="finale-hint">toque nos balões, ou no cachorrinho para soltar todos</p>
+    <div class="pup-wrap">
+      <img id="pup" class="pup-img" src="images/snoopy.png" alt="Snoopy" tabindex="0" role="button" aria-label="Tocar no Snoopy">
+    </div>
+
+    <p class="finale-hint" id="finale-hint">toque nos balões, ou no Snoopy, para soltar todos</p>
 
     <div class="finale-message" id="finale-message" hidden>
       <svg class="ribbon-div" viewBox="0 0 300 24"><use href="#ribbon"/></svg>
