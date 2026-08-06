@@ -514,8 +514,9 @@ button{
   -webkit-touch-callout: none;
   user-select: none;
   filter: drop-shadow(0 14px 20px rgba(36,52,79,0.18));
-  transition: transform .3s ease;
+  transition: transform .3s ease, opacity .22s ease;
 }
+.pup-img.swap{ opacity: 0; }
 .pup-img.bounce{ animation: bounce .5s ease; }
 @keyframes bounce{
   0%,100%{ transform: translateY(0); }

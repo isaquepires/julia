@@ -176,6 +176,22 @@
   const svgRoot = document.getElementById('balloons');
   let balloonsVisible = false;
 
+  const pupDefaultSrc = pup.getAttribute('src');
+  const pupHappySrc = pup.dataset.happySrc;
+  if (pupHappySrc){
+    const preload = new Image();
+    preload.src = pupHappySrc;
+  }
+
+  function swapPupImage(newSrc, newAlt){
+    pup.classList.add('swap');
+    setTimeout(() => {
+      pup.src = newSrc;
+      if (newAlt) pup.alt = newAlt;
+      pup.classList.remove('swap');
+    }, 220);
+  }
+
   function releaseBalloon(num){
     const balloon = svgRoot.querySelector(`.balloon[data-balloon="${num}"]`);
     const string = svgRoot.querySelector(`.balloon-string[data-balloon="${num}"]`);
@@ -222,6 +238,9 @@
     balloonsVisible = true;
     svgRoot.classList.add('balloons-visible');
     finaleHint.textContent = 'toque nos balões, ou no Snoopy de novo, para soltar todos';
+    if (pupHappySrc){
+      swapPupImage(pupHappySrc, 'Snoopy feliz');
+    }
   }
 
   function releaseAll(){
