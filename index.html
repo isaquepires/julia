@@ -150,10 +150,10 @@
   <div class="finale-stage" id="finale-stage">
     <svg class="balloons" id="balloons" viewBox="0 0 320 170" aria-hidden="true">
       <!-- linhas dos balões -->
-      <line class="balloon-string" data-balloon="1" x1="150" y1="150" x2="70" y2="70" />
-      <line class="balloon-string" data-balloon="2" x1="150" y1="150" x2="125" y2="55" />
-      <line class="balloon-string" data-balloon="3" x1="160" y1="150" x2="185" y2="55" />
-      <line class="balloon-string" data-balloon="4" x1="160" y1="150" x2="235" y2="70" />
+      <path class="balloon-string" data-balloon="1" d="M150 150 C 132 115, 88 105, 70 70" fill="none" />
+      <path class="balloon-string" data-balloon="2" d="M150 150 C 153 115, 122 90, 125 55" fill="none" />
+      <path class="balloon-string" data-balloon="3" d="M160 150 C 157 115, 188 90, 185 55" fill="none" />
+      <path class="balloon-string" data-balloon="4" d="M160 150 C 194 132, 201 89, 235 70" fill="none" />
 
       <!-- balões -->
       <g class="balloon" data-balloon="1" tabindex="0" role="button" aria-label="Soltar balão">
@@ -174,7 +174,7 @@
       <img id="pup" class="pup-img" src="images/snoopy.png" alt="Snoopy" tabindex="0" role="button" aria-label="Tocar no Snoopy">
     </div>
 
-    <p class="finale-hint" id="finale-hint">toque nos balões, ou no Snoopy, para soltar todos</p>
+    <p class="finale-hint" id="finale-hint">toque no Snoopy para ver os balões</p>
 
     <div class="finale-message" id="finale-message" hidden>
       <svg class="ribbon-div" viewBox="0 0 300 24"><use href="#ribbon"/></svg>

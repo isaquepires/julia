@@ -174,6 +174,7 @@
   const finaleHint = document.getElementById('finale-hint');
   const finaleMessage = document.getElementById('finale-message');
   const svgRoot = document.getElementById('balloons');
+  let balloonsVisible = false;
 
   function releaseBalloon(num){
     const balloon = svgRoot.querySelector(`.balloon[data-balloon="${num}"]`);
@@ -217,18 +218,32 @@
     pup.classList.add('bounce');
   }
 
+  function showBalloons(){
+    balloonsVisible = true;
+    svgRoot.classList.add('balloons-visible');
+    finaleHint.textContent = 'toque nos balões, ou no Snoopy de novo, para soltar todos';
+  }
+
   function releaseAll(){
-    bouncePup();
     svgRoot.querySelectorAll('.balloon').forEach((b, i) => {
       setTimeout(() => releaseBalloon(b.dataset.balloon), i * 120);
     });
   }
 
-  pup.addEventListener('click', releaseAll);
+  function handlePupActivate(){
+    bouncePup();
+    if (!balloonsVisible){
+      showBalloons();
+      return;
+    }
+    releaseAll();
+  }
+
+  pup.addEventListener('click', handlePupActivate);
   pup.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' '){
       e.preventDefault();
-      releaseAll();
+      handlePupActivate();
     }
   });
 

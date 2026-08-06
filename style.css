@@ -446,13 +446,35 @@ button{
 .balloon-string{
   stroke: var(--blue-soft);
   stroke-width: 1;
-  transition: opacity .4s ease;
+  opacity: 0;
+  transition: opacity .5s ease;
 }
 
 .balloon{
   cursor: pointer;
-  transition: transform .3s ease;
+  opacity: 0;
+  transform: translateY(14px) scale(.8);
+  transform-origin: 50% 100%;
+  transition: opacity .5s ease, transform .5s ease;
+  pointer-events: none;
 }
+
+.balloons.balloons-visible .balloon-string{
+  opacity: 1;
+}
+.balloons.balloons-visible .balloon{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.balloons.balloons-visible .balloon[data-balloon="1"]{ transition-delay: 0s; }
+.balloons.balloons-visible .balloon[data-balloon="2"]{ transition-delay: .08s; }
+.balloons.balloons-visible .balloon[data-balloon="3"]{ transition-delay: .16s; }
+.balloons.balloons-visible .balloon[data-balloon="4"]{ transition-delay: .24s; }
+.balloons.balloons-visible .balloon-string[data-balloon="2"]{ transition-delay: .04s; }
+.balloons.balloons-visible .balloon-string[data-balloon="3"]{ transition-delay: .12s; }
+.balloons.balloons-visible .balloon-string[data-balloon="4"]{ transition-delay: .2s; }
+
 .balloon ellipse{
   fill: var(--blue);
   stroke: var(--blue-deep);
@@ -547,4 +569,6 @@ button{
   .scroll-cue span{ animation: none; }
   .balloon.released{ animation: none; opacity: 0; transition: opacity .6s; }
   .pup-img.bounce{ animation: none; }
+  .balloon, .balloon-string{ transition: opacity .3s ease; transform: none; }
+  .balloons.balloons-visible .balloon{ transform: none; }
 }
