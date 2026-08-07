@@ -93,12 +93,12 @@
   };
 
   const CARDS = [
-    { id: 'bacio',   name: 'Bacio di Latte', icon: 'gelato',    blurb: 'gelato, pra roubar uma colherada sua' },
-    { id: 'bauducco', name: 'Casa Bauducco', icon: 'padaria',   blurb: 'café da tarde e conversa boa' },
-    { id: 'chunky',  name: 'Chunky Chunks',  icon: 'cookie',    blurb: 'cookie quentinho, mão na mão' },
-    { id: 'damarate', name: 'Damarate',      icon: 'cupcake',   blurb: 'doce raro pra ocasião especial' },
-    { id: 'kopen',   name: 'Kopenhagen',     icon: 'chocolate', blurb: 'chocolate fino, à moda antiga' },
-    { id: 'cacau',   name: 'Cacau Show',     icon: 'trufa',      blurb: 'trufa na mão, sem pressa nenhuma' },
+    { id: 'bacio',   name: 'Bacio di Latte', icon: 'gelato',    blurb: 'e esse sorvete bem geladinho?' },
+    { id: 'bauducco', name: 'Casa Bauducco', icon: 'padaria',   blurb: 'o chocotone com calda quentinha?' },
+    { id: 'chunky',  name: 'Chunky Chunks',  icon: 'cookie',    blurb: 'quer um cookies bem quentinho?' },
+    { id: 'damarate', name: 'Damarate',      icon: 'cupcake',   blurb: 'que tal a gente provar algo novo?' },
+    { id: 'kopen',   name: 'Kopenhagen',     icon: 'chocolate', blurb: 'um cafézinho pra ver se está sonhando?' },
+    { id: 'cacau',   name: 'Cacau Show',     icon: 'trufa',      blurb: 'mil folhas de um conto de fadas' },
   ];
 
   const grid = document.getElementById('card-grid');
@@ -133,7 +133,7 @@
 
   function showConfirm(card){
     confirmBox.hidden = false;
-    confirmText.textContent = `combinado! nosso próximo encontro é na ${card.name} 💙`;
+    confirmText.textContent = `combinado, meu amor! então o nosso próximo encontro é na ${card.name} 💙`;
   }
 
   grid.addEventListener('click', (e) => {
@@ -237,7 +237,7 @@
   function showBalloons(){
     balloonsVisible = true;
     svgRoot.classList.add('balloons-visible');
-    finaleHint.textContent = 'toque nos balões, ou no Snoopy de novo, para soltar todos';
+    finaleHint.textContent = 'toque no Snoopy de novo, ele se esqueceu de soltar os balões! ';
     if (pupHappySrc){
       swapPupImage(pupHappySrc, 'Snoopy feliz');
     }
