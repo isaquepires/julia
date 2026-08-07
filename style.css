@@ -168,6 +168,13 @@ button{
   50%{ opacity: 1; }
 }
 
+.hero-note{
+  margin-top: var(--space-2);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--blue-soft);
+}
+
 .scroll-cue{
   margin-top: var(--space-2);
   width: 26px;
