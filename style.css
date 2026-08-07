@@ -171,9 +171,9 @@ button{
 .hero-note{
   margin-top: var(--space-2);
   text-align: left;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.04em;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .scroll-cue{
