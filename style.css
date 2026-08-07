@@ -169,10 +169,10 @@ button{
 }
 
 .hero-note{
-  margin-top: var(--space-2);
+  margin-top: var(--space-5);
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: var(--blue-soft);
+  color: var(--gold);
 }
 
 .scroll-cue{
